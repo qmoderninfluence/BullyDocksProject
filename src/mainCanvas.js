@@ -13,6 +13,8 @@ loadDockImage();
 //loadDockImage();
 //addBackgroundImage()
 // console.log("backgroundCtrl image: ", backgroundImg);
+var backgroundGroup = new fabric.Group([]);
+
 
 
 function getMainCanvasXPosition(){

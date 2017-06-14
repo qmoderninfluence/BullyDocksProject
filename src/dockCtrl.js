@@ -16,7 +16,7 @@ function loadDockImage(){
 
       var imgBottom = img.top + imgHeight;
       var imgRight = img.left + imgWidth;
-      // 
+      //
       // if(img.left > 0)
       // {
       //   img.left = 0;
@@ -48,8 +48,6 @@ function loadDockImage(){
       //   img.top = img.top;
       // }
 
-      console.log("img.aCoords.br.x",img.aCoords.br.x);
-      console.log("canvas.width",canvas.width);
       console.log(img);
     });
 
