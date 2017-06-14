@@ -1,4 +1,6 @@
-var canvas = new fabric.Canvas('mainCanvas');
+var canvas = new fabric.Canvas('mainCanvas',{
+  preserveObjectStacking: true
+});
 //loadBackgroundImage();
 // var backgrounImg = "";
 //loadDockImage()
