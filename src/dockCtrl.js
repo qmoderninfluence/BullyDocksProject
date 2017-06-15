@@ -16,47 +16,18 @@ function loadDockImage(){
 
       var imgBottom = img.top + imgHeight;
       var imgRight = img.left + imgWidth;
-      //
-      // if(img.left > 0)
-      // {
-      //   img.left = 0;
-      // }
-      // else {
-      //   img.left = img.left;
-      // }
-      //
-      // if(imgRight < canvas.width){
-      //
-      //   img.left = canvas.width - imgWidth;
-      //   console.log("imgRight",imgRight);
-      // }
-      // else{
-      //   img.left = img.left;
-      // }
-      //
-      // if(img.top > getMainCanvasPosition().top){
-      //   img.top = 0;
-      // }
-      // else {
-      //   img.top = img.top
-      // }
-      //
-      // if(imgBottom < canvas.height){
-      //   img.top = canvas.height - imgHeight;
-      // }
-      // else{
-      //   img.top = img.top;
-      // }
 
-      console.log(img);
+      // console.log(img);
     });
 
     })
 }
 
-
 function addDockImage(img){
-  canvas.add(img).setActiveObject(img);
+  //displayGroup.addWithUpdate(img);
+  allObjects.push(img)
+  console.log(allObjects.length)
+   canvas.add(img).setActiveObject(img);
 }
 
 // function getMainCanvasPosition(){
@@ -64,8 +35,6 @@ function addDockImage(img){
 //   console.log(position);
 //   return position;
 // }
-
-
 
 // function addBackgroundImage(){
 //   canvas.setBackgroundImage('assets/Billy Docks.svg', canvas.renderAll.bind(canvas));

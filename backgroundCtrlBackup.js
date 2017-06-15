@@ -1,5 +1,5 @@
 
-var canvas = new fabric.Canvas('mainCanvas');
+//var canvas = new fabric.Canvas('mainCanvas');
 
 fabric.Image.fromURL('assets/Billy Docks.svg', function(img) {
   img.scale(6).set({

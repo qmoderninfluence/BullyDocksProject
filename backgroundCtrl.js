@@ -10,6 +10,7 @@ var canvas = new fabric.Canvas('mainCanvas',{
 loadBackgroundImage();
 loadDockImage();
 loadDockImage();
+
 //addBackgroundImage()
 // console.log("backgroundCtrl image: ", backgroundImg);
 
