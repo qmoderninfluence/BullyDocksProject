@@ -1,8 +1,8 @@
 var
 			// Obtain a reference to the canvas element
 				// using its id.
-        htmlDiv = document.getElementById('divMainCanvas'),
-				htmlCanvas = document.getElementById('mainCanvas'),
+    htmlDiv = document.getElementById('divMainCanvas'),
+		htmlCanvas = document.getElementById('mainCanvas'),
 			  	// Obtain a graphics context on the
 			  	// canvas element for drawing.
 			  	context = htmlCanvas.getContext('2d');
@@ -28,15 +28,15 @@ var
 				htmlCanvas.width = htmlDivWidth;
 				//console.log("div.length2", htmlDivHeight)
 			}
-var sliderValue;
-var slider = new Slider('#ex1', {
-	formatter: function(value) {
-		sliderValue = value;
-		return 'Current value: ' + value;
-	}
-});
-
-function getSlider(){
-	console.log("sliderValue",sliderValue)
-	return sliderValue;
-}
+// var sliderValue;
+// var slider = new Slider('#ex1', {
+// 	formatter: function(value) {
+// 		sliderValue = value;
+// 		return 'Current value: ' + value;
+// 	}
+// });
+//
+// function getSlider(){
+// 	console.log("sliderValue",sliderValue)
+// 	return sliderValue;
+// }

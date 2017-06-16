@@ -1,6 +1,4 @@
-var backgroundImage;
-//console.log('model first?');
-var a = 2
+
 function loadBackgroundImage(){
   fabric.Image.fromURL('assets/Billy Docks.svg', function(img) {
     img.set({
@@ -16,13 +14,9 @@ function loadBackgroundImage(){
 
     console.log(img)
     img.sendToBack();
+    img.selectable = false
     backgroundMovingAndScaling(img);
 
-    console.log(img.globalCompositeOperation);
-    //testting
-    backgroundImage = img;
-    //loadDockImage();
-    //console.log("length", canvas.getObjects().length)
   });
 }
 
@@ -45,7 +39,6 @@ function backgroundMovingAndScaling(img){
     if(imgRight < canvas.width){
 
       img.left = canvas.width - imgWidth;
-      console.log("imgRight",imgRight);
     }
     else{
       img.left = img.left;
@@ -64,11 +57,9 @@ function backgroundMovingAndScaling(img){
     }
     else{
       img.top = img.top;
+      img.lockScalingY = false;
     }
 
-    console.log("img.aCoords.br.x",img.aCoords.br.x);
-    console.log("canvas.width",canvas.width);
-    console.log(img);
   });
 
   img.on('scaling',function(){
@@ -83,6 +74,10 @@ function backgroundMovingAndScaling(img){
       if(img.scaleX < 1){
         img.scaleX = 1
         img.lockScalingX = false;
+      }
+      else if(img.scaleY < 1){
+        img.scaleY = 1
+        img.lockScalingY = false;
       }
       else if(imgRight < canvas.width){
         img.lockScalingX = true;
@@ -105,18 +100,19 @@ function backgroundMovingAndScaling(img){
         img.top = img.top
       }
 
-      var objects = canvas.getObjects();
-      for(var x = 0; x < objects.length; x++){
-        objects[x]
+      if(imgBottom < canvas.height){
+        img.scaleY = img.scaleX
+        img.lockScalingY = true;
       }
-
+      else {
+        img.lockScalingY = false;
+      }
   });
 
 }
 
 function addImage(img){
-  allObjects.push(img);
-  console.log(allObjects.length)
+
   //displayGroup.addWithUpdate(img);
   canvas.add(img).setActiveObject(img);
   //backgroundImage = canvas.getActiveObject();
@@ -124,7 +120,6 @@ function addImage(img){
 
 function getMainCanvasPosition(){
   var position = $("#mainCanvas").position();
-  console.log(position);
   return position;
 }
 

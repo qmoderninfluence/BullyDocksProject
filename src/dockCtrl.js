@@ -25,8 +25,8 @@ function loadDockImage(){
 
 function addDockImage(img){
   //displayGroup.addWithUpdate(img);
-  allObjects.push(img)
-  console.log(allObjects.length)
+  // allObjects.push(img)
+
    canvas.add(img).setActiveObject(img);
 }
 
