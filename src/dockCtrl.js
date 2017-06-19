@@ -1,3 +1,7 @@
+// var DockImage = new fabric.Image();
+
+
+/////////////
 function loadDockImage(){
   fabric.Image.fromURL('assets/Billy Docks.svg', function(img) {
     img.set({
@@ -5,20 +9,23 @@ function loadDockImage(){
       width:canvas.width / 10,
       left: 0,
       top: 0,
+      perPixelTargetFind: true
     });
 
-    addDockImage(img);
-    console.log(img)
-  //  img.sendToBack();
-    img.on('moving', function() {
-      var imgWidth = img.width * img.scaleX
-      var imgHeight = img.height * img.scaleY
+    DockImage = img
+  //  addDockImage(DockImage);
 
-      var imgBottom = img.top + imgHeight;
-      var imgRight = img.left + imgWidth;
+  //  img.sendToBack();
+      img.on('moving', function() {
+        img.bringToFront();
+        var imgWidth = img.width * img.scaleX
+        var imgHeight = img.height * img.scaleY
+
+        var imgBottom = img.top + imgHeight;
+        var imgRight = img.left + imgWidth;
 
       // console.log(img);
-    });
+      });
 
     })
 }
@@ -27,7 +34,9 @@ function addDockImage(img){
   //displayGroup.addWithUpdate(img);
   // allObjects.push(img)
 
-   canvas.add(img).setActiveObject(img);
+  canvas.add(img).setActiveObject(img);
+  img.bringToFront();
+
 }
 
 // function getMainCanvasPosition(){

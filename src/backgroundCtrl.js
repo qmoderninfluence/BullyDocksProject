@@ -12,7 +12,6 @@ function loadBackgroundImage(){
     addImage(img);
     img.lockRotation = true;
 
-    console.log(img)
     img.sendToBack();
     img.selectable = false
     backgroundMovingAndScaling(img);
