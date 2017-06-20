@@ -13,19 +13,18 @@ function loadDockImage(){
     });
 
     DockImage = img
-  //  addDockImage(DockImage);
+    addDockImage(DockImage);
+    img.bringToFront();
+    img.on('moving', function() {
+      img.bringToFront();
+      var imgWidth = img.width * img.scaleX
+      var imgHeight = img.height * img.scaleY
 
-  //  img.sendToBack();
-      img.on('moving', function() {
-        img.bringToFront();
-        var imgWidth = img.width * img.scaleX
-        var imgHeight = img.height * img.scaleY
-
-        var imgBottom = img.top + imgHeight;
-        var imgRight = img.left + imgWidth;
+      var imgBottom = img.top + imgHeight;
+      var imgRight = img.left + imgWidth;
 
       // console.log(img);
-      });
+    });
 
     })
 }

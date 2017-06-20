@@ -18,23 +18,23 @@ function init(DockImage) {
           // maxWidth: document.getElementById("fabriccanvas").width,
           selectable: false,
       });
+      console.log(DockImage)
+    // var squareBtn = new fabric.Rect({
+    //     top: 10,
+    //     left: 18,
+    //     width: 40,
+    //     height: 40,
+    //     fill: '#af3',
+    //     lockRotation: true,
+    //     originX: 'left',
+    //     originY: 'top',
+    //     cornerSize: 15,
+    //     hasRotatingPoint: false,
+    //     perPixelTargetFind: true,
+    // });
 
-    var squareBtn = new fabric.Rect({
-        top: 10,
-        left: 18,
-        width: 40,
-        height: 40,
-        fill: '#af3',
-        lockRotation: true,
-        originX: 'left',
-        originY: 'top',
-        cornerSize: 15,
-        hasRotatingPoint: false,
-        perPixelTargetFind: true,
-    });
-
-    var dockBtn = DockImage
-console.log(dockBtn)
+    //var dockBtn = DockImage
+// console.log(dockBtn)
 
     var shadow = {
         color: 'rgba(0,0,0,0.6)',
@@ -48,15 +48,16 @@ console.log(dockBtn)
 
    canvas.add(bg);
    bg.setShadow(shadow);
-   canvas.add(dockBtn);
-   dockBtn.bringToFront()
+   //canvas.add(dockBtn);
+   //DockImage.bringToFront()
+
 
    canvas.forEachObject(function (e) {
         e.hasControls = e.hasBorders = false; //remove borders/controls
     });
 
     function draggable(object) {
-      console.log("draggable",object)
+    //  console.log("draggable",object)
       object.on('mousedown', function() {
           var temp = object.cloneAsImage();
 
@@ -65,6 +66,7 @@ console.log(dockBtn)
               hasBorders: false,
           });
           canvas.add(temp);
+          //loadDockImage()
           draggable(temp);
       });
       object.on('mouseup', function() {
@@ -82,7 +84,7 @@ console.log(dockBtn)
   }
 
   //draggable(squareBtn);
-  draggable(dockBtn);
+  draggable(DockImage);
 
 
 }
@@ -95,7 +97,7 @@ var isGroupSelection = false
 
 $("#loadDock").click(function(){
   //selectAllCanvasObjects();
-  init(DockImage);
+  init();
 });
 
 $("#selectAll").click(function(){
